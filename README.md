@@ -1,5 +1,7 @@
 # Learn github actions
 
+[![Build Status](https://github.com/ishxiao/learn-github-actions/workflows/learn-github-actions/badge.svg)](https://github.com/ishxiao/learn-github-actions/actions?query=workflow%3Alearn-github-actions)
+
 1. Create a new repository.
 
 - Create a directory named `learn-github-actions` to contain the project.

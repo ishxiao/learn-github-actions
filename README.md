@@ -1,6 +1,6 @@
 # Learn github actions
 
-[![Build Status](https://github.com/ishxiao/learn-github-actions/workflows/learn-github-actions/badge.svg)](https://github.com/ishxiao/learn-github-actions/actions?query=workflow%3Alearn-github-actions)
+[![Learn github actions](https://github.com/ishxiao/learn-github-actions/actions/workflows/learn-github-actions.yml/badge.svg)](https://github.com/ishxiao/learn-github-actions/actions/workflows/learn-github-actions.yml)
 
 1. Create a new repository.
 

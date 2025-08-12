@@ -1,18 +1,36 @@
-name: Learn github actions
+name: Learn GitHub Actions
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+
+# Trigger the workflow on push or manual dispatch from Actions tab
+on:
+  push:
+  workflow_dispatch:
+
 jobs:
   Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest  # Use macOS runner (supports both x64 and ARM)
+
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Display event trigger info
+        run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      - name: Display runner OS
+        run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+
+      - name: Display branch and repo info
+        run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      - name: Confirm repo clone
+        run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+
+      - name: Ready to test
+        run: echo "🖥️ The workflow is now ready to test your code on the runner."
+
+      - name: List files in the repository workspace
+        run: ls ${{ github.workspace }}
+
+      - name: Show job status
+        run: echo "🍏 This job's status is ${{ job.status }}."
